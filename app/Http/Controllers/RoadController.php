@@ -25,6 +25,8 @@ class RoadController extends Controller
     public function create()
     {
         //
+        //dd("Hello elena i am here");
+        return view('layouts.admin.road', []);
     }
 
     /**

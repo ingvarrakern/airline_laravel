@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/admin-pilot', [App\Http\Controllers\PilotController::class, 'create'])->name('formcreatepilot');
+Route::get('/admin-road', [App\Http\Controllers\RoadController::class, 'create'])->name('formcreateroad');
+Route::get('/admin-aircraft', [App\Http\Controllers\AircraftController::class, 'create'])->name('formcreateaircraft');

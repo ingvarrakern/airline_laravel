@@ -25,6 +25,8 @@ class PilotController extends Controller
     public function create()
     {
         //
+        //dd("Hello elena i am here");
+        return view('layouts.admin.pilot', []);
     }
 
     /**
