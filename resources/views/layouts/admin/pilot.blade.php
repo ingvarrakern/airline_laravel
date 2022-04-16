@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Admin Pilot') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('savepilot') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="job_experience" class="col-md-4 col-form-label text-md-end">{{ __('Job_experience') }}</label>
+                            <label for="job_experience" class="col-md-4 col-form-label text-md-end">{{ __('Job Experience') }}</label>
 
                             <div class="col-md-6">
                                 <input id="job_experience" type="number" class="form-control @error('job_experience') is-invalid @enderror" name="job_experience" value="{{ old('job_experience') }}" required autocomplete="job_experience" autofocus>
@@ -65,15 +65,32 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="range" class="col-md-4 col-form-label text-md-end">{{ __('Range') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="range" type="number" class="form-control @error('range') is-invalid @enderror" name="range" value="{{ old('range') }}" required autocomplete="range" autofocus>
+
+                                @error('range')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Create') }}
                                 </button>
                             </div>
                         </div>
                     </form>
+                    <br>
+                    @isset($pilot)
+                        <p>The pilot {{!! $pilot->name !!}} has been created</p>
+                    @endisset
                 </div>
             </div>
         </div>

@@ -37,7 +37,8 @@ class RoadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $road = Road::create($request->toArray());
+        return view('layouts.admin.road', ["road" => $road]);
     }
 
     /**

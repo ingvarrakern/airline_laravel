@@ -26,7 +26,8 @@ class AircraftController extends Controller
     {
         //
         //dd("Hello elena i am here");
-        return view('layouts.admin.aircraft', []);
+        $roads = \App\Models\Road::all();
+        return view('layouts.admin.aircraft', ['roads'=>$roads]);
     }
 
     /**
@@ -37,7 +38,8 @@ class AircraftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $aircraft = Aircraft::create($request->toArray());
+        return view('layouts.admin.aircraft',["aircraft" => $aircraft]);
     }
 
     /**

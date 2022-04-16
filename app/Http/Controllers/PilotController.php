@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Pilot;
 use Illuminate\Http\Request;
 
-class PilotController extends Controller
-{
+class PilotController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -22,10 +21,7 @@ class PilotController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-        //dd("Hello elena i am here");
+    public function create() {
         return view('layouts.admin.pilot', []);
     }
 
@@ -35,19 +31,18 @@ class PilotController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $pilot = Pilot::create($request->toArray());
+        return view('layouts.admin.pilot', ["pilot" => $pilot]);
     }
-
+    
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Pilot  $pilot
      * @return \Illuminate\Http\Response
      */
-    public function show(Pilot $pilot)
-    {
+    public function show(Pilot $pilot) {
         //
     }
 
@@ -57,8 +52,7 @@ class PilotController extends Controller
      * @param  \App\Models\Pilot  $pilot
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pilot $pilot)
-    {
+    public function edit(Pilot $pilot) {
         //
     }
 
@@ -69,8 +63,7 @@ class PilotController extends Controller
      * @param  \App\Models\Pilot  $pilot
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pilot $pilot)
-    {
+    public function update(Request $request, Pilot $pilot) {
         //
     }
 
@@ -80,8 +73,8 @@ class PilotController extends Controller
      * @param  \App\Models\Pilot  $pilot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pilot $pilot)
-    {
+    public function destroy(Pilot $pilot) {
         //
     }
+
 }
